@@ -128,6 +128,7 @@ mod user_agent;
 mod uuid;
 mod variant;
 mod watch;
+mod query_raw;
 
 mod _priv {
     use super::*;

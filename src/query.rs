@@ -32,6 +32,14 @@ impl Query {
             sql: SqlBuilder::new(template),
         }
     }
+    /// Creates a new query that will be used as-is without any processing.
+    pub(crate) fn raw(client: &Client, query: &str) -> Self {
+        Self {
+            client: client.clone(),
+            sql: SqlBuilder::raw(query),
+        }
+    }
+
 
     /// Display SQL query as string.
     pub fn sql_display(&self) -> &impl Display {
