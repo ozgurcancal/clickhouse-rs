@@ -74,7 +74,7 @@ impl SqlBuilder {
 
         SqlBuilder::InProgress(parts, None)
     }
-    pub fn raw(query: &str) -> Self {
+    pub(crate) fn raw(query: &str) -> Self {
         Self::InProgress(vec![Part::Text(query.to_string())], None)
     }
 
